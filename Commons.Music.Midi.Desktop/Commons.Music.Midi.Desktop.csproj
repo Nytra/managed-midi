@@ -15,7 +15,9 @@
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\external\alsa-sharp\alsa-sharp\alsa-sharp.csproj" />
+    <Reference Include="alsa-sharp">
+      <HintPath>..\external\alsa-sharp\alsa-sharp\bin\Release\netstandard2.0\alsa-sharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="..\Commons.Music.Midi.CoreMidiShared\Commons.Music.Midi.CoreMidiShared.projitems" Label="Shared" Condition="Exists('..\Commons.Music.Midi.CoreMidiShared\Commons.Music.Midi.CoreMidiShared.projitems')" />
   <Import Project="..\Commons.Music.Midi.DesktopShared\Commons.Music.Midi.DesktopShared.projitems" Label="Shared" Condition="Exists('..\Commons.Music.Midi.DesktopShared\Commons.Music.Midi.DesktopShared.projitems')" />
