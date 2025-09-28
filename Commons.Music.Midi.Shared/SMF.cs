@@ -392,15 +392,12 @@ namespace Commons.Music.Midi
 		}
 
 		public byte EventType {
-			get {
-				switch (StatusByte) {
-				case Meta:
-				case SysEx1:
-				case SysEx2:
-					return StatusByte;
-				default:
-					return (byte) (Value & 0xF0);
-				}
+			get
+			{
+				var statusByte = StatusByte;
+				if (statusByte >= 0xF0)
+					return statusByte;
+				return (byte)(statusByte & 0xF0);
 			}
 		}
 
